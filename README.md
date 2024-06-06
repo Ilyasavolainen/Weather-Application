@@ -1,23 +1,12 @@
-
-# Currency Converter
-The App was made using C# WinForm
-The Currency Converter  app is a simple, fast, and efficient way of converting currency from Eur to Zlote, riyals, & GBP.
-
-------------------------------------------------------------------------------------------------
-
-## About The App and Future Updates
-- Support of other currencies
-- make a Mobile app by using Flutter & darts
-- Improve User Interface and User Experience
-- Due to the booming of Crypto Currency, make support to convert Crypto to anyu currency
-- Make it more User Friendly
+# Приложение погоды и Конвертер валют 
+Приложения созданы с использованием C# WinForm
+Приложение Конвертер валют - это простой, быстрый и эффективный способ конвертации валюты из доллара в рубль и другие валюты.
+Приложение Погода - это приложение с возможностью просматривать погоду по разным городам.
 
 ------------------------------------------------------------------------------------------------
 
-## Motivation
-As an international student at Vistula University(Warsaw) , I have always had the urge to convert from zlote  to my local currencyand not worry about any conversion rates, etc. Currency Converter is just the app I wanted -  my first C#  Winform Project
+## Информация о приложении и будущих обновлениях
+- Поддержка других валют
+- Улучшим пользовательский интерфейс и удобство работы с пользователями
+- Сделаем его более удобным для пользователей
 
-------------------------------------------------------------------------------------------------
-
-## ScreenShots of Application
-<img src = "CurrencyConverter/Images/1.png"> <img src = "CurrencyConverter/Images/2.png">
