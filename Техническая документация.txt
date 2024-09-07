@@ -1,0 +1,187 @@
+
+Техническая документация для веб-страницы интернет-магазина новогодней и рождественской атрибутики
+
+1. Введение
+
+Данный документ описывает структуру и функциональность HTML-кода для веб-страницы интернет-магазина, специализирующегося на продаже новогодней и рождественской атрибутики. Страница включает в себя навигацию, слайдер, каталог товаров и форму оформления заказа.
+
+2. Структура документа
+
+2.1. Заголовок документа
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Интернет-магазин новогодней и рождественской атрибутики</title>
+
+
+- <!DOCTYPE html>: Указывает, что документ является HTML5.
+- <html>: Начало HTML-документа.
+- <head>: Содержит метаданные и ссылки на ресурсы.
+
+2.2. Метатеги
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+
+- <meta name="viewport">: Обеспечивает адаптивность страницы на мобильных устройствах, устанавливая ширину в соответствии с шириной экрана устройства.
+- <meta http-equiv="Content-Type">: Устанавливает кодировку документа (UTF-8), что позволяет корректно отображать текст на разных языках.
+
+2.3. Подключение стилей и скриптов
+
+<script src="static/js/jquery-3.4.1.min.js"></script>
+<script src="static/js/slick.js"></script>
+<script src="static/js/script.js"></script>
+<link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="static/css/slick.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<link href="static/css/style.css" rel="stylesheet" type="text/css">
+
+
+- JavaScript:
+  - jQuery: Библиотека для упрощения работы с JavaScript.
+  - Slick: Плагин для создания слайдеров.
+  - script.js: Пользовательский JavaScript-файл для дополнительных функций.
+
+- CSS:
+  - Bootstrap: CSS-фреймворк для быстрой разработки адаптивных интерфейсов.
+  - Slick.css: Стили для плагина Slick.
+  - Font Awesome: Библиотека иконок, подключенная через CDN.
+  - style.css: Пользовательские стили для оформления страницы.
+
+3. Основное содержимое страницы
+
+3.1. Основная структура
+
+<body>
+  <div class="vein"></div>
+  <div class="main container">
+
+
+- <body>: Основное содержимое страницы.
+- <div class="vein">: Контейнер для декоративных элементов (может использоваться для фона или эффекта).
+- <div class="main container">: Основной контейнер для всего контента страницы с классом Bootstrap для центрирования и отступов.
+
+3.2. Заголовок и навигация
+
+<header>
+  <div class="mobile-menu-open-button js_mobile_menu_open_button"><i class="fas fa-bars"></i></div>
+  <nav class="js_wide_menu">
+    <i class="fas fa-times close-mobile-menu js_close_mobile_menu"></i>
+    <div class="wrapper-inside">
+      <div class="visible-elements">
+        <span>Главная</span>
+        <span>Новый год</span>
+        <span><a href="basket.php">Корзина</a></span>
+        <span>Акции</span>
+        <span>Оплата</span>
+        <span>Доставка</span>
+        <span>Отзывы</span>
+        <span>О магазине</span>
+      </div>
+    </div>
+  </nav>
+
+
+- <header>: Секция заголовка страницы.
+- Кнопка мобильного меню: Иконка "гамбургера", открывающая мобильное меню.
+- Навигационное меню (<nav>): Содержит ссылки на основные разделы сайта, включая корзину и информацию о магазине.
+
+3.3. Слайдер
+
+<div class="slider-block">
+  <div class="nav-left"><i class="fas fa-chevron-left"></i></div> 
+  <div class="slider"> 
+    <div style="background: url('static/img/slide-1.jpg') no-repeat; background-size: auto 100%; background-position: center;">
+      <span class="text-box">Новогодние игрушки со скидкой в 30%</span>
+    </div>
+    <!-- Другие слайды -->
+  </div>
+  <div class="nav-right"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+ChatGPT 4 | Midjourney | Claude | Suno, [07.09.2024 10:33]
+- Слайдер: Блок с изображениями и текстами акций.
+- Навигация по слайдам: Кнопки для переключения между слайдами.
+
+3.4. Каталог товаров
+
+<section class="product-box">
+  <h2>Каталог</h2>
+  <div class="row">
+    <?foreach ($products as $product): ?>
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent" data-id="<?=$product['id']?>">
+        <div class="product">
+          <div class="product-pic" style="background: url('<?=$product['image']?>') no-repeat; background-size: auto 100%; background-position: center"></div>
+          <span class="product-name"><?=$product['name']?></span>
+          <span class="product_price"><?=$product['price']?> руб.</span>
+          <button class="js_buy">Купить</button>
+        </div>
+      </div>
+    <?endforeach?>
+  </div>
+</section>
+
+
+- <section class="product-box">: Раздел каталога товаров.
+- Цикл PHP: Выводит товары из массива $products, создавая для каждого товара отдельный блок с изображением, названием, ценой и кнопкой "Купить".
+
+3.5. Форма оформления заказа
+
+<div class="overlay js_overlay"></div>
+<div class="popup">
+  <h3>Оформление заказа</h3><i class="fas fa-times close-popup js_close-popup"></i>
+  <div class='js_error'></div>
+  <input type="hidden" name="product-id">
+  <input type="text" name="fio" placeholder="Ваше имя">
+  <input type="text" name="phone" placeholder="Телефон">
+  <input type="text" name="email" placeholder="e-mail">
+  <textarea placeholder="Комментарий" name="comment"></textarea>
+  <button class="js_send">Отправить</button>
+</div>
+
+
+- Всплывающее окно (<popup>): Используется для оформления заказа.
+- Поля ввода для имени, телефона, email и комментария.
+- Кнопка "Отправить", которая инициирует процесс оформления заказа.
+
+3.6. Футер
+
+<footer>
+  2024 © С новым годом!
+</footer>
+
+
+- Простое сообщение о праве собственности на контент.
+
+4. Примечания по безопасности
+
+- Следует использовать подготовленные выражения при работе с базой данных для предотвращения SQL-инъекций.
+- Необходимо валидировать пользовательский ввод для защиты от XSS-атак.
+
+5. Заключение
+
+Данная веб-страница предоставляет пользователям удобный интерфейс для просмотра и покупки новогодних товаров, а также возможность оформления заказов через простую форму. Рекомендуется регулярно обновлять контент и проверять функциональность всех элементов страницы.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
